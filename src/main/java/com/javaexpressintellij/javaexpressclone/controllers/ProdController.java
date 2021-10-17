@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ProdController {
@@ -41,8 +42,8 @@ public class ProdController {
 
     }
 
-    @GetMapping
-    public void fetchProdInformation(){
-
+    @GetMapping("/fetchProduct/{productId}")
+    public void fetchProdInformation(@PathVariable Long productId){
+        productService.fetchProduct(productId);
     }
 }
