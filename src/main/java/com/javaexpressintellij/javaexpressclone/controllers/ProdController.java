@@ -30,7 +30,7 @@ public class ProdController {
 
     @PutMapping
     public void updateProd(){
-
+            productService.updateProduct();
     }
 
     @GetMapping("/retrieveProducts")

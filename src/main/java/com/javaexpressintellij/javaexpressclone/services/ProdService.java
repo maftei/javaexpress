@@ -39,4 +39,7 @@ public class ProdService {
             return null;
         }
     }
+
+    public void updateProduct() {
+    }
 }
