@@ -17,6 +17,7 @@ public class ProdController {
 
     @PostMapping("/createProd")
     public Prod createProd(@RequestBody Prod product){
+
         return productService.create(product);
     }
 
