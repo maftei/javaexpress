@@ -28,13 +28,14 @@ public class ProdController {
 
     }
 
-    @PutMapping
-    public void updateProd(){
-            productService.updateProduct();
+    @PutMapping (value="/updateProduct/{productId}")
+    public void updateProd(@PathVariable ("productId") Long productId, @RequestBody Prod product){
+            productService.updateProduct(productId,product);
     }
 
     @GetMapping("/retrieveProducts")
     public Iterable<Prod> retrieveProd(){
+
         return productService.getAllProducts();
     }
 
@@ -44,7 +45,8 @@ public class ProdController {
     }
 
     @GetMapping("/fetchProduct/{productId}")
-    public void fetchProdInformation(@PathVariable Long productId){
-        productService.fetchProduct(productId);
+    public Prod fetchProduct(@PathVariable("productId") Long productId){
+
+        return productService.fetchProduct(productId);
     }
 }

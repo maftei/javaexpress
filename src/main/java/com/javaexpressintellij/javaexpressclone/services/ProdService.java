@@ -33,13 +33,22 @@ public class ProdService {
         if (optionalProduct.isPresent()) {
             Prod product = optionalProduct.get();
             return product;
-        }
-        {
-            System.out.println("No such product in db :" + productId);
-            return null;
-        }
+        }else
+            {
+                System.out.println("No such product in db :" + productId);
+                return null;
+            }
     }
 
-    public void updateProduct() {
+    public Prod updateProduct(Long prodId, Prod inputProduct ) {
+
+        Prod dbProduct=fetchProduct(prodId);
+        if(dbProduct!=null){
+            dbProduct.setProdName(inputProduct.getProdName());
+            dbProduct.setProdDescription(inputProduct.getProdDescription());
+
+            return productRepository.save(dbProduct);
+        }
+        return null;
     }
 }
