@@ -51,4 +51,13 @@ public class ProdService {
         }
         return null;
     }
+
+    public void deleteProduct(Long productid) {
+
+        Prod dbProductInfo=fetchProduct(productid);
+        if(dbProductInfo!=null)
+        {
+            productRepository.deleteById(productid);
+        }
+    }
 }
