@@ -28,23 +28,26 @@ public class ProdController {
 
     }
 
-    @PutMapping
-    public void updateProd(){
-
+    @PutMapping (value="/updateProduct/{productId}")
+    public void updateProd(@PathVariable ("productId") Long productId, @RequestBody Prod product){
+            productService.updateProduct(productId,product);
     }
 
     @GetMapping("/retrieveProducts")
     public Iterable<Prod> retrieveProd(){
+
         return productService.getAllProducts();
     }
 
-    @DeleteMapping
-    public void deleteProd(){
+    @DeleteMapping(value="/deleteProduct/{productId}")
+    public void deleteProd(@PathVariable("productId") Long productId){
+        productService.deleteProduct(productId);
 
     }
 
     @GetMapping("/fetchProduct/{productId}")
-    public void fetchProdInformation(@PathVariable Long productId){
-        productService.fetchProduct(productId);
+    public Prod fetchProduct(@PathVariable("productId") Long productId){
+
+        return productService.fetchProduct(productId);
     }
 }
