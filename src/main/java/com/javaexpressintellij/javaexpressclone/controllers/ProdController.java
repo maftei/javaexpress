@@ -6,6 +6,7 @@ import com.javaexpressintellij.javaexpressclone.services.ProdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,7 @@ public class ProdController {
     private ProdService productService;
 
     @PostMapping("/createProd")
-    public Prod createProd(@RequestBody Prod product){
+    public Prod createProd(@RequestBody  @Valid Prod product){
 
         return productService.create(product);
     }
