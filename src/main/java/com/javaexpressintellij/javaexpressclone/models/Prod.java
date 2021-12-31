@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 
@@ -18,7 +21,11 @@ public class Prod {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long prodId;
 
+    @Size(min =3, max =100, message="prodName should have at least 3 characters")
+    @NotNull
     private String prodName;
+
+    @NotEmpty(message="product description must not be empty")
     private String prodDescription;
 
     @CreationTimestamp
