@@ -34,16 +34,19 @@ public class Prod {
     @UpdateTimestamp
     private Date updatedTime;
 
+    private Integer barCode;
+
     public Prod() {
 
     }
 
-    public Prod(Long prodId, String prodName, String prodDescription, Date createdTime, Date updatedTime) {
+    public Prod(Long prodId, String prodName, String prodDescription, Date createdTime, Date updatedTime,Integer barCode) {
         this.prodId = prodId;
         this.prodName = prodName;
         this.prodDescription = prodDescription;
         this.createdTime = createdTime;
         this.updatedTime = updatedTime;
+        this.barCode=barCode;
     }
 
     public Long getProdId() {
@@ -82,14 +85,22 @@ public class Prod {
         this.updatedTime = updatedTime;
     }
 
-    @Override
-    public String toString() {
-        return "Prod{" +
-                "prodId=" + prodId +
-                ", prodName='" + prodName + '\'' +
-                ", prodDescription='" + prodDescription + '\'' +
-                ", createdTime=" + createdTime +
-                ", updatedTime=" + updatedTime +
-                '}';
+    public Integer getBarCode() {
+        return barCode;
     }
+
+    public void setBarCode(Integer barCode) {
+        this.barCode = barCode;
+    }
+
+    //    @Override
+//    public String toString() {
+//        return "Prod{" +
+//                "prodId=" + prodId +
+//                ", prodName='" + prodName + '\'' +
+//                ", prodDescription='" + prodDescription + '\'' +
+//                ", createdTime=" + createdTime +
+//                ", updatedTime=" + updatedTime +
+//                '}';
+//    }
 }

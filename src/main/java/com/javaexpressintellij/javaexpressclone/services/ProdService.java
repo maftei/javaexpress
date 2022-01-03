@@ -63,4 +63,14 @@ public class ProdService {
             productRepository.deleteById(productid);
         }
     }
+
+    public List<Prod> fetchProductInfoBarCode(Integer barCode) {
+
+        return productRepository.findByBarCode(barCode);
+    }
+
+    public List<String> fetchAllProductName() {
+
+        return  productRepository.fetchAllProductName();
+    }
 }
