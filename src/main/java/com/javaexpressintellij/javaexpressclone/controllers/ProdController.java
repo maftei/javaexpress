@@ -51,4 +51,15 @@ public class ProdController {
 
         return productService.fetchProduct(productId);
     }
+
+    @GetMapping("/product/{barCode}")
+    public List<Prod> fetchProductByBarCode(@PathVariable("barCode") Integer barCode){
+
+        return productService.fetchProductInfoBarCode(barCode);
+    }
+
+    @GetMapping(value="/allproductnames")
+    public List<String> fetchAllProductNames() {
+        return productService.fetchAllProductName();
+    }
 }
