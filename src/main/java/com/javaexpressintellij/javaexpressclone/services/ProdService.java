@@ -73,4 +73,6 @@ public class ProdService {
 
         return  productRepository.fetchAllProductName();
     }
+
+    //manage
 }
