@@ -17,6 +17,7 @@ import java.util.Date;
 @Entity
 public class Prod {
 
+    /////////////////////////////////////////////
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long prodId;
