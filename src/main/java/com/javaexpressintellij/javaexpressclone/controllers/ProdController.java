@@ -34,7 +34,7 @@ public class ProdController {
             productService.updateProduct(productId,product);
     }
 
-    @GetMapping("   ")
+    @GetMapping("/allproductnames")
     public Iterable<Prod> retrieveProd(){
 
         return productService.getAllProducts();
