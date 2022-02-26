@@ -58,8 +58,4 @@ public class ProdController {
         return productService.fetchProductInfoBarCode(barCode);
     }
 
-    @GetMapping(value="/allproductnames")
-    public List<String> fetchAllProductNames() {
-        return productService.fetchAllProductName();
-    }
 }
