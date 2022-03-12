@@ -48,6 +48,7 @@ public class Prod {
         this.createdTime = createdTime;
         this.updatedTime = updatedTime;
         this.barCode=barCode;
+        //
     }
 
     public Long getProdId() {
