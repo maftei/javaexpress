@@ -11,7 +11,7 @@ In the wiki section you can find more about this project.
 	
 ## Technologies
 Project is created with:
-* Spring Boot:2.5.5
+* Spring Boot:2.5.5.
 * JAVA version : 8
 * Database :MySQL / H2 database
 	
