@@ -54,7 +54,7 @@ public class ProdController {
 
     @GetMapping("/product/{barCode}")
     public List<Prod> fetchProductByBarCode(@PathVariable("barCode") Integer barCode){
-        /////
+        //////
         return productService.fetchProductInfoBarCode(barCode);
     }
 
