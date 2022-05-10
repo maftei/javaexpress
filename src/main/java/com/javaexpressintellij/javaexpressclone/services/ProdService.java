@@ -14,7 +14,7 @@ public class ProdService {
 
     @Autowired
     private ProdRepository productRepository;
-
+//
     public Prod create(Prod product) {
         Prod dbProduct = productRepository.save(product);
         return dbProduct;
