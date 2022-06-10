@@ -14,7 +14,7 @@ public class ProdService {
 
     @Autowired
     private ProdRepository productRepository;
-
+//
     public Prod create(Prod product) {
         Prod dbProduct = productRepository.save(product);
         return dbProduct;
@@ -25,9 +25,8 @@ public class ProdService {
         return dbproducts;
     }
 
-    public Iterable<Prod> getAllProducts() {
-        return productRepository.findAll();
-    }
+
+
 
     public Prod fetchProduct(Long productId) {
 //        Optional<Prod> optionalProduct = productRepository.findById(productId);
@@ -72,6 +71,10 @@ public class ProdService {
     public List<String> fetchAllProductName() {
 
         return  productRepository.fetchAllProductName();
+    }
+
+    public Iterable<Prod> getAllProducts() {
+        return productRepository.findAll();
     }
 
     //manage

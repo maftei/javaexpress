@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 public class ProdController {
-
+////
     @Autowired
     private ProdService productService;
 
@@ -54,6 +54,7 @@ public class ProdController {
 
     @GetMapping("/product/{barCode}")
     public List<Prod> fetchProductByBarCode(@PathVariable("barCode") Integer barCode){
+        //firts comiit
 
         return productService.fetchProductInfoBarCode(barCode);
     }
