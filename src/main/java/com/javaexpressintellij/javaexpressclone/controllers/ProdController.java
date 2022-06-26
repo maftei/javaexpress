@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+////
 public class ProdController {
-//////
     @Autowired
     private ProdService productService;
 
@@ -21,14 +21,14 @@ public class ProdController {
 
         return productService.create(product);
     }
-//
+////////////////////////////////////////////////////////git
     //creating list of products
     @PostMapping("/createProducts")
     public Iterable<Prod> createProducts(@RequestBody List<Prod> product) {
         return productService.insertListOfProducts(product);
 
     }
-//
+//createting mapps
     @PutMapping (value="/updateProduct/{productId}")
     public void updateProd(@PathVariable ("productId") Long productId, @RequestBody Prod product){
             productService.updateProduct(productId,product);
