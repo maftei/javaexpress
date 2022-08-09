@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+
 public class ProdController {
-////
     @Autowired
     private ProdService productService;
 
@@ -28,7 +28,7 @@ public class ProdController {
         return productService.insertListOfProducts(product);
 
     }
-
+//creating update method with Putmapping
     @PutMapping (value="/updateProduct/{productId}")
     public void updateProd(@PathVariable ("productId") Long productId, @RequestBody Prod product){
             productService.updateProduct(productId,product);
