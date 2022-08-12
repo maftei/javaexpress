@@ -16,17 +16,17 @@ pipeline {
             sh "mvn clean install"
         }
     }
-//     stage("Sonar Analysis") {
-//         environment{
-//             scannerHome= tool "SonarQubeScanner"
-//         }
-//         steps{
-//             echo "Sonar analysis started"
-//             withSonarQubeEnv("Maftei"){
-//                 sh "${scannerHome}/bin/sonar-scanner"
-//             }
-//         }
-//     }
+    stage("Sonar Analysis") {
+        environment{
+            scannerHome= tool "SonarQubeScanner"
+        }
+        steps{
+            echo "Sonar analysis started"
+            withSonarQubeEnv("Maftei"){
+                sh "${scannerHome}/bin/sonar-scanner"
+            }
+        }
+    }
 //     stage("Create Docker Image"){
 //         steps{
 //
