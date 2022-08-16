@@ -22,7 +22,7 @@ pipeline {
         }
         steps{
             echo "Sonar analysis started"
-            withSonarQubeEnv("MafteiSonar"){
+            withSonarQubeEnv("SonarQubeJavaExpress"){
                 sh "${scannerHome}/bin/sonar-scanner"
             }
         }
