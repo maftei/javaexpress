@@ -27,28 +27,28 @@ pipeline {
             }
         }
     }
-//     stage("Create Docker Image"){
-//         steps{
-//
-//         sh 'docker version'
-//         sh 'docker build -t springjavaexpress-docker-demo .'
-//         sh 'docker image list'
-//         sh 'docker tag springjavaexpress-docker-demo andrei4455/springjavaexpress-docker-demo:springjavaexpress-docker-demo'
-//         }
-//     }
-//     stage("Docker Login"){
-//         steps{
-//             withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
-//                 sh 'docker login -u andrei4455 -p $PASSWORD'
-//             }
-//         }
-//     }
-//
-//     stage("Push Image to Docker Hub"){
-//         steps{
-//             sh 'docker push  andrei4455/springjavaexpress-docker-demo:springjavaexpress-docker-demo'
-//         }
-//     }
+    stage("Create Docker Image"){
+        steps{
+
+        sh 'docker version'
+        sh 'docker build -t springjavaexpress-docker-demo .'
+        sh 'docker image list'
+        sh 'docker tag springjavaexpress-docker-demo andrei4455/springjavaexpress-docker-demo:springjavaexpress-docker-demo'
+        }
+    }
+    stage("Docker Login"){
+        steps{
+            withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
+                sh 'docker login -u andrei4455 -p $PASSWORD'
+            }
+        }
+    }
+
+    stage("Push Image to Docker Hub"){
+        steps{
+            sh 'docker push  andrei4455/springjavaexpress-docker-demo:springjavaexpress-docker-demo'
+        }
+    }
  }
 
 }
