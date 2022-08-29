@@ -109,5 +109,11 @@
 			<url>https://jcenter.bintray.com/</url>
 		</repository>
 	</repositories>
-
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>a0zmvomc6e9kh-artifactory-primary-0-releases</name>
+			<url>https://jfrogest.jfrog.io/artifactory/rmaftei-libs-release-local</url>
+		</repository>
+	</distributionManagement>
 </project>
