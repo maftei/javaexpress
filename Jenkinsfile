@@ -54,7 +54,7 @@ pipeline {
                 steps {
                     rtServer (
                         id: "jfrog",
-                        url: "https://jfrogest.jfrog.io/",
+                        url: "https://jfrogest.jfrog.io/artifactory/rmaftei-libs-release-local/",
                         credentialsId: "jfrog"
                     )
 
