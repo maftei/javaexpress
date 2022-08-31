@@ -49,6 +49,50 @@ pipeline {
             sh 'docker push  andrei4455/springjavaexpress-docker-demo:springjavaexpress-docker-demo'
         }
     }
+
+     stage ('Artifactory configuration') {
+                steps {
+                    rtServer (
+                        id: "jfrog",
+                        url: " https://jfrogest.jfrog.io/artifactory",
+                        credentialsId: "jfrog"
+                    )
+
+                    rtMavenDeployer (
+                        id: "MAVEN_DEPLOYER",
+                        serverId: "jfrog",
+                        releaseRepo: "rmaftei-libs-release-local",
+                        snapshotRepo: "rmaftei-libs-release-local"
+                    )
+
+                    rtMavenResolver (
+                        id: "MAVEN_RESOLVER",
+                        serverId: "jfrog",
+                        releaseRepo: "rmaftei-libs-release-local",
+                        snapshotRepo: "rmaftei-libs-release-local"
+                    )
+                }
+        }
+
+		stage ('Deploy Artifacts') {
+            steps {
+                rtMavenRun (
+                    tool: "maven", // Tool name from Jenkins configuration
+                    pom: 'javaexpressclone/pom.xml',
+                    goals: 'clean install',
+                    deployerId: "MAVEN_DEPLOYER",
+                    resolverId: "MAVEN_RESOLVER"
+                )
+         }
+    }
+
+	stage ('Publish build info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "jfrog"
+             )
+        }
+    }
  }
 
 }
