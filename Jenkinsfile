@@ -62,14 +62,14 @@ pipeline {
                         id: "MAVEN_DEPLOYER",
                         serverId: "jfrog",
                         releaseRepo: "rmaftei-libs-release-local",
-                        snapshotRepo: "rmaftei-libs-release-local"
+                        snapshotRepo: "rmaftei-libs-snapshot-local"
                     )
 
                     rtMavenResolver (
                         id: "MAVEN_RESOLVER",
                         serverId: "jfrog",
-                        releaseRepo: "rmaftei-libs-release-local",
-                        snapshotRepo: "rmaftei-libs-release-local"
+                        releaseRepo: "rmaftei-libs-release",
+                        snapshotRepo: "rmaftei-libs-snapshot"
                     )
                 }
         }
