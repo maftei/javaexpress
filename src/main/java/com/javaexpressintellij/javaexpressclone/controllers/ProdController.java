@@ -22,7 +22,7 @@ public class ProdController {
         return productService.create(product);
     }
 
-    ////creating list of products
+    //creating list of products
     @PostMapping("/createProducts")
     public Iterable<Prod> createProducts(@RequestBody List<Prod> product) {
         return productService.insertListOfProducts(product);
@@ -54,7 +54,7 @@ public class ProdController {
 
     @GetMapping("/product/{barCode}")
     public List<Prod> fetchProductByBarCode(@PathVariable("barCode") Integer barCode){
-        //firts comiit
+
 
         return productService.fetchProductInfoBarCode(barCode);
     }
