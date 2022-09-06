@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: javaexpress5-deployment
-  namespace: dev
+  namespace: {{ .Values.namespace}}
   labels:
     app: javaexpress5
 spec:
