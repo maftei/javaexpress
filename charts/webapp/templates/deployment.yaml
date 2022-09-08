@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javaexpress5-deployment
+  name: javaexpress2-deployment
   namespace: {{ .Values.namespace}}
   labels:
-    app: javaexpress5
+    app: javaexpress2
 spec:
   replicas: {{ .Values.deployment.replicaCount}}
   selector:
     matchLabels:
-      app: javaexpress5
+      app: javaexpress2
   template:
     metadata:
       labels:
-        app: javaexpress5
+        app: javaexpress2
     spec:
       containers:
-        - name: javaexpress5
+        - name: javaexpress2
           image: {{ .Values.deployment.image}}
           imagePullPolicy: Always
           ports:
