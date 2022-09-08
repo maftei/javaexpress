@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.javaexpressintellij</groupId>
 	<artifactId>javaexpressclone</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>javaexpressclone</name>
 	<description>Java Express with intellij</description>
 	<properties>
