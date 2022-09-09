@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javaexpress2-deployment
+  name: {{ .Values.deployment.name}}
   namespace: {{ .Values.namespace}}
   labels:
-    app: javaexpress2
+    app: {{ .Values.deployment.app}}
 spec:
   replicas: {{ .Values.deployment.replicaCount}}
   selector:
@@ -18,9 +18,9 @@ spec:
       containers:
         - name: javaexpress2
           image: {{ .Values.deployment.image}}
-          imagePullPolicy: Always
+          imagePullPolicy: {{ .Values.deployment.imagePullPolicy}}
           ports:
-            - containerPort: 8080
+            - containerPort: {{ .Values.deployment.containerPort}}
           readinessProbe:
             tcpSocket:
               port: 8080
