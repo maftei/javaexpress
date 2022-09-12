@@ -99,7 +99,7 @@ pipeline {
             dir('charts') {
             withCredentials([usernamePassword(credentialsId: 'jfrog', usernameVariable: 'username', passwordVariable: 'password')]) {
                  sh 'sudo /usr/local/bin/helm package webapp'
-                 sh 'sudo /usr/local/bin/helm push-artifactory webapp-3.0.tgz https://jfrogest.jfrog.io/artifactory/rmaftei-helm-local/ --username $username --password $password'
+                 sh 'sudo /usr/local/bin/helm push-artifactory webapp-4.0.tgz https://jfrogest.jfrog.io/artifactory/rmaftei-helm-local/ --username $username --password $password'
     		  }
             }
             }
