@@ -17,7 +17,6 @@ import java.util.Date;
 @Entity
 public class Prod {
 
-    /////////////////////////////////////////////
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long prodId;
@@ -48,7 +47,6 @@ public class Prod {
         this.createdTime = createdTime;
         this.updatedTime = updatedTime;
         this.barCode=barCode;
-        //
     }
 
     public Long getProdId() {
@@ -95,14 +93,4 @@ public class Prod {
         this.barCode = barCode;
     }
 
-    //    @Override
-//    public String toString() {
-//        return "Prod{" +
-//                "prodId=" + prodId +
-//                ", prodName='" + prodName + '\'' +
-//                ", prodDescription='" + prodDescription + '\'' +
-//                ", createdTime=" + createdTime +
-//                ", updatedTime=" + updatedTime +
-//                '}';
-//    }
 }

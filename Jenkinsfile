@@ -94,16 +94,16 @@ pipeline {
         }
     }
 
-    stage('Build Helm Charts') {
-        steps {
-            dir('charts') {
-            withCredentials([usernamePassword(credentialsId: 'jfrog', usernameVariable: 'username', passwordVariable: 'password')]) {
-                 sh 'sudo /usr/local/bin/helm package webapp'
-                 sh 'sudo /usr/local/bin/helm push-artifactory webapp-5.0.tgz https://jfrogest.jfrog.io/artifactory/rmaftei-helm-local/ --username $username --password $password'
-    		  }
-            }
-            }
-          }
+//     stage('Build Helm Charts') {
+//         steps {
+//             dir('charts') {
+//             withCredentials([usernamePassword(credentialsId: 'jfrog', usernameVariable: 'username', passwordVariable: 'password')]) {
+//                  sh 'sudo /usr/local/bin/helm package webapp'
+//                  sh 'sudo /usr/local/bin/helm push-artifactory webapp-5.0.tgz https://jfrogest.jfrog.io/artifactory/rmaftei-helm-local/ --username $username --password $password'
+//     		  }
+//             }
+//             }
+//           }
  }
 
 }
