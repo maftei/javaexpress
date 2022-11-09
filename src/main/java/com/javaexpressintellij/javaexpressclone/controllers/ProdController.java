@@ -22,13 +22,13 @@ public class ProdController {
         return productService.create(product);
     }
 
-    //creating list of products sit
+//creatin list of products
     @PostMapping("/createProducts")
     public Iterable<Prod> createProducts(@RequestBody List<Prod> product) {
         return productService.insertListOfProducts(product);
 
     }
-    //creating update method with Putmapping
+    //creating update method with PutMapping in dev branch
     @PutMapping (value="/updateProduct/{productId}")
     public void updateProd(@PathVariable ("productId") Long productId, @RequestBody Prod product){
             productService.updateProduct(productId,product);
