@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.deployment.name}}
-  namespace: {{ .Values.namespace}}
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.namespace }}
   labels:
-    app: {{ .Values.deployment.app}}
+    app: {{ .Values.deployment.app }}
 spec:
-  replicas: {{ .Values.deployment.replicaCount}}
+  replicas: {{ .Values.deployment.replicaCount }}
   selector:
     matchLabels:
       app: javaexpress2
@@ -17,10 +17,10 @@ spec:
     spec:
       containers:
         - name: javaexpress2
-          image: {{ .Values.deployment.image}}
-          imagePullPolicy: {{ .Values.deployment.imagePullPolicy}}
+          image: {{ .Values.deployment.image }}
+          imagePullPolicy: {{ .Values.deployment.imagePullPolicy }}
           ports:
-            - containerPort: {{ .Values.deployment.containerPort}}
+            - containerPort: {{ .Values.deployment.containerPort }}
           readinessProbe:
             tcpSocket:
               port: 8080
