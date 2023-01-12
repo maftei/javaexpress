@@ -96,7 +96,7 @@ pipeline {
 
     stage("Snyk Test"){
             steps{
-                sh '/usr/local/bin/snyk-linux-container-test-andrei4455/springjavaexpress-docker-demo:springjavaexpress-docker-demo'
+                sh '/usr/local/bin/snyk-linux-container-test-andrei4455/springjavaexpress-docker-demo'
             }
         }
 
