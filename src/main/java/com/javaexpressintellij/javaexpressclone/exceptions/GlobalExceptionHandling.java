@@ -29,7 +29,7 @@ public class GlobalExceptionHandling extends ResponseEntityExceptionHandler {
     }
 
 
-    //internal server error
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> handleException(Exception ex) {
 
