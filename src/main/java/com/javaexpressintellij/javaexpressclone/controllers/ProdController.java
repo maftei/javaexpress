@@ -22,7 +22,7 @@ public class ProdController {
         return productService.create(product);
     }
 
-
+//post mapping method
     @PostMapping("/createProducts")
     public Iterable<Prod> createProducts(@RequestBody List<Prod> product) {
         return productService.insertListOfProducts(product);
