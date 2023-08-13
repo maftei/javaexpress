@@ -93,4 +93,5 @@ public class Prod {
         this.barCode = barCode;
     }
 
+   // String java;
 }

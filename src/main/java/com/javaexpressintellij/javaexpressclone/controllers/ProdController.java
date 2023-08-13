@@ -29,6 +29,7 @@ public class ProdController {
 
     }
 
+    //put mapping
     @PutMapping (value="/updateProduct/{productId}")
     public void updateProd(@PathVariable ("productId") Long productId, @RequestBody Prod product){
             productService.updateProduct(productId,product);
