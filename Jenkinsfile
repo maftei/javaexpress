@@ -94,12 +94,7 @@ pipeline {
         }
     }
 
-//     stage("Snyk Test"){
-//             steps{
-//                 sh ' /usr/local/bin/snyk-linux container test andrei4455/springjavaexpress-docker-demo'
-//             }
-//         }
-//
+
 
     stage('Build Helm Charts') {
         steps {
