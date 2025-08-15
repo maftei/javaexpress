@@ -1,0 +1,6 @@
+[submodule "code-quality"]
+	path = code-quality
+	url = https://github.com/maftei/code-quality.git
+[submodule "quality"]
+	path = quality
+	url = https://github.com/maftei/code-quality
